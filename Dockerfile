@@ -22,11 +22,11 @@ WORKDIR /usr/src/app/
 COPY package.json package-lock.json ./
 
 RUN npm ci 
-
 RUN npm install -g @angular/cli nodemon
 
 COPY . .
 
+RUN mkdir -p dist && chmod -R 755 dist
 
 EXPOSE 4000
 
